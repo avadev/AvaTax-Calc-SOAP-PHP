@@ -1,9 +1,12 @@
-This is a PHP client adapter for Avalara AvaTax web services. This version has support for the tax, address and batch services.
+This is a PHP client adapter for Avalara AvaTax web services. 
 
-A set of Unit tests and examples are provided.
-
-YOU MUST CONFIGURE Credentials.php before running tests or samples!
+Samples include GetTaxRequest, Ping, PostTax, and Address Validate.
 
 
-Run readme.html in a browser for more details.
- 
+For samples to function, the Security\Credentials.php must be configured with your
+Account Number and License Key (or username and password) 
+
+
+For more details - run the readme.html in a browser.
+
+
