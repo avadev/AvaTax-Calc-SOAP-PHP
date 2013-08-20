@@ -111,7 +111,7 @@ class AddressServiceSoap extends AvalaraSoapClient
     }
     
     /**
-     * Validates an address and returns a collection of possible
+     * Validates an address and returns a normalized address or error.
      * {@link ValidAddress} objects in a {@link ValidateResult} object.
      * 
      * Takes an {@link Address}, an optional {@link TextCase}
@@ -129,8 +129,6 @@ class AddressServiceSoap extends AvalaraSoapClient
      *  $address->setPostalCode("98110-2450");
      *
      *  $result = $port->validate(new ValidateRequest($address,TextCase::$Upper));
-     *  $addresses = $result->validAddresses();
-     *  print('Number of addresses returned is: '.sizeof($addresses)); 
      * </pre>
      *
      * @param ValidateRequest
