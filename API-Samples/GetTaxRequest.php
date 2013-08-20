@@ -29,7 +29,7 @@ while ($line = fgets($file)) {                                          //Reads 
     $request->setDocCode($DocCode);                          // R: Invoice or document tracking number - Must be unique
     $request->setDocDate(date_format($dateTime, "Y-m-d"));  // R: Date the document is processed and Taxed - See TaxDate
     $request->setSalespersonCode($SalesPersonCode);        // O: String
-    $request->setCustomerCode($CustomerCode);             // R: String - Customer Tracking number or Exemption Customer Code
+    $request->setCustomerCode($CustomerCode);             // R: String - Customer Tracking number
     $request->setCustomerUsageType($EntityUseCode);      // O: String   Entity Usage
     $request->setDiscount($Discount);                   // O: Decimal - amount of total document discount
     $request->setPurchaseOrderNo($PurchaseOrderNo);    // O: String 
