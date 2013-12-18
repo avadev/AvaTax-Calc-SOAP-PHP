@@ -10,4 +10,6 @@ Documentation for the Adaptor is located in the Docs  folder (run Docs\index.htm
 For more details about the Sample - run the readme.html in a browser.
 
 
+Test of GitHub 
+
 
