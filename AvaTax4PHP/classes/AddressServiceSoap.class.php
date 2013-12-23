@@ -16,7 +16,7 @@
  * </pre>
  *
  * @author    Avalara
- * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
+ * @copyright ï¿½ 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   Address
  * 
  */
@@ -110,8 +110,8 @@ class AddressServiceSoap extends AvalaraSoapClient
         return $this->client->Ping(array('Message' => $message))->PingResult;
     }
     
-    /**
-     * Validates an address and returns a normalized address or error.
+   /**
+     * Validates an address and returns a collection of possible
      * {@link ValidAddress} objects in a {@link ValidateResult} object.
      * 
      * Takes an {@link Address}, an optional {@link TextCase}
@@ -129,6 +129,8 @@ class AddressServiceSoap extends AvalaraSoapClient
      *  $address->setPostalCode("98110-2450");
      *
      *  $result = $port->validate(new ValidateRequest($address,TextCase::$Upper));
+     *  $addresses = $result->validAddresses();
+     *  print('Number of addresses returned is: '.sizeof($addresses)); 
      * </pre>
      *
      * @param ValidateRequest
