@@ -57,6 +57,20 @@ class DocumentType extends Enum
 	 * @var DocumentType
 	 */
     public static $ReturnInvoice	= 'ReturnInvoice';
+
+     /**
+	 * Inventory Transfer Order
+	 *
+	 * @var DocumentType
+	 */
+    public static $InventoryTransferOrder	= 'InventoryTransferOrder';
+
+     /**
+	 * Inventory Transfer Invoice
+	 *
+	 * @var DocumentType
+	 */
+    public static $InventoryTransferInvoice	= 'InventoryTransferInvoice';
     
     /**
 	 * This will return all types of documents.
@@ -74,14 +88,13 @@ class DocumentType extends Enum
 			DocumentType::$PurchaseInvoice,
 			DocumentType::$ReturnOrder,
 			DocumentType::$ReturnInvoice,	
-			DocumentType::$Any	
+			DocumentType::$InventoryTransferOrder,	
+			DocumentType::$InventoryTransferInvoice,
+			DocumentType::$Any
 		);
 	}
 	// Unfortunate boiler plate due to polymorphism issues on static functions
     public static function Validate($value) { self::__Validate($value,self::Values(),__CLASS__); }
-	
-   
-	
 	
 }
 

@@ -16,7 +16,7 @@ class TaxOverrideType
     public static $TaxAmount = "TaxAmount";
     public static $Exemption = "Exemption";
     public static $TaxDate = "TaxDate";
-    
+	public static $AccruedTaxAmount = "AccruedTaxAmount";
 }
 
 ?>

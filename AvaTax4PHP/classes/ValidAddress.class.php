@@ -110,6 +110,8 @@ class ValidAddress //extends Address - or it should - SoapClient has issues mapp
 		strcmp($this->Region , $other->Region) == 0 &&
 		strcmp($this->PostalCode , $other->PostalCode) == 0 &&
 		strcmp($this->Country , $other->Country) == 0 &&
+		strcmp($this->Latitude , $other->Latitude) == 0 &&
+		strcmp($this->Longitude , $other->Longitude) == 0 &&
 		$this->TaxRegionId === $other->TaxRegionId
 		);
 	}

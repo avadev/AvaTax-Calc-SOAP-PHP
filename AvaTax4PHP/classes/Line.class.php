@@ -34,6 +34,7 @@ class Line
 	private $TaxOverride;	//TaxOverride
 	private $OriginAddress;			//Address
 	private $DestinationAddress;		//Address
+    private $BusinessIdentificationNo;      //string
 	private $TaxIncluded;		//boolean
 
 
@@ -203,6 +204,24 @@ class Line
 	public function getTaxIncluded($value)
 	{
 		return $this->TaxIncluded;
+    }
+
+    /**
+     * Sets BusinessIdentificationNo in the line.
+     * @param string
+     */
+    public function setBusinessIdentificationNo($value)
+    {
+        $this->BusinessIdentificationNo=$value;
+    }
+
+    /**
+     * Gets BusinessIdentificationNo .
+     * @return string
+     */
+    public function getBusinessIdentificationNo()
+    {
+        return $this->BusinessIdentificationNo;
 	}
     
     public function registerAddressesIn(&$getTaxRequest)
