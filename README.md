@@ -1,23 +1,23 @@
-The <strong>AvaTaxCalc PHP (for SOAP)Sample</strong> is open source designed to assist you with developing your own <em>custom</em> integration to your chosen web store or e-commerce solution. Each sample can be executed from a command prompt provided they have been pre-configured with:<br />
-<li>The Web service URL:</li>
-<li>Account Number</li>
-<li>License Key</li>
+The <strong>AvaTaxCalc PHP (for SOAP) Sample</strong> is open source designed to assist you with developing your own <em>custom</em> integration to your chosen web store or e-commerce solution. Each sample can be executed from a command prompt provided they have been pre-configured with:<br /><br />
+The Web service URL<br />
+Account Number<br />
+License Key<br />
 <br />
 <em><strong>Note: </strong></em>The Avalara Admin Account <em>Username</em> and <em>Password</em> can be used in place of <em>Account</em> and <em>License Key</em>
 </p>
 <p><strong>Installation Dependencies</strong></p>
 <li>PHP V5.2 or later</li>
-<li><em>SSL</em> and <em>SoapClient</em> support must be enabled for your PHP interpretor: </li>
+<li><em>SSL</em> and <em>SoapClient</em> support must be enabled for your PHP interpreter: </li>
 For windows, add the following extentions to php.ini: <br />
 <span class="cmeta"><code>extension=php_soap.dll</code><br />
-<code>exetnsion=php_openssl.dl</code></span><code>l </code> <br />
+<code>extension=php_openssl.dll</code></span><code> </code> <br />
 <br />
-<em><strong>Note: </strong></em>For <em>*nix</em>, it may be necessary to recompile your PHP interpretor with <em>soap.dll</em> and <em>oenssl.dll</em> enabled.
+<em><strong>Note: </strong></em>For <em>*nix</em>, it may be necessary to recompile your PHP interpreter with <em>soap.dll</em> and <em>oenssl.dll</em> enabled.
 <p><strong>Included in this sample set</strong>, and recommended testing order, are:</p>
-<table width="750" border="0" cellspacing="0" cellpadding="0">
+<table width="1000" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="172"><div align="center"><strong>API</strong></div></td>
-    <td width="328"><div align="center"><strong>a method thatDemonstrated</strong></div></td>
+    <td width="828"><div align="center"><strong>Method Demonstrated</strong></div></td>
   </tr>
   <tr>
     <td><strong>IsAuthorized.php</strong></td>
@@ -45,7 +45,7 @@ For windows, add the following extentions to php.ini: <br />
   </tr>
   <tr>
     <td><strong>GetTaxHistory.php</strong></td>
-    <td>a <a href="http://developer.avalara.com/api-docs/avalara-avatax-api-reference#cat-GetTaxHistory" target="_blank">method</a> thatthat retrieves  details for previously saved (to the AvaTax database) documents.</td>
+    <td>a <a href="http://developer.avalara.com/api-docs/avalara-avatax-api-reference#cat-GetTaxHistory" target="_blank">method</a> that retrieves  details for previously saved (to the AvaTax database) documents.</td>
   </tr>
   <tr>
     <td><strong>AdjustTax.php</strong></td>
