@@ -4,17 +4,17 @@ require('AvaTax4PHP\AvaTax.php');
 //TODO: Replace account and license key with your credentials
 new ATConfig('Development', array(
     'url' => 'https://development.avalara.net',
-    'account' => '110000000',
-    'license' => '1A2B3C4D5E6F7G8')
+    'account' => '1234567890',
+    'license' => 'A1B2C3D4E5F6G7H8')
 );
 $client = new TaxServiceSoap('Development');
 $request = new PostTaxRequest();
-$request->setCompanyCode("");
+$request->setCompanyCode("APITrialCompany");
 $request->setDocType("SalesInvoice");
-$request->setDocCode("1000000");
-$request->setDocDate("2014-04-18");
-$request->setTotalAmount(100.00);
-$request->setTotalTax(8.7);
+$request->setDocCode("INV001");
+$request->setDocDate("2014-01-01");
+$request->setTotalAmount(175.00);
+$request->setTotalTax(14.27);
 $request->setCommit(false);
 // PostTax and Results
 try {

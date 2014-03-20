@@ -4,14 +4,15 @@ require('AvaTax4PHP\AvaTax.php');
 //TODO: Replace account and license key with your credentials
 new ATConfig('Development', array(
     'url' => 'https://development.avalara.net',
-    'account' => '110000000',
-    'license' => '1A2B3C4D5E6F7G8')
+    'account' => '1234567890',
+    'license' => 'A1B2C3D4E5F6G7H8')
 );
 $client = new TaxServiceSoap('Development');
 $request = new GetTaxHistoryRequest();
-$request->setDocCode("1000000");
 $request->setCompanyCode("APITrialCompany");
 $request->setDocType(DocumentType::$SalesInvoice);
+$request->setDocCode("INV001");
+
 $request->setDetailLevel(DetailLevel::$Tax);
 try
     {

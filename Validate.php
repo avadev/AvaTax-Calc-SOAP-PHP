@@ -4,19 +4,19 @@ require('AvaTax4PHP\AvaTax.php');
 //TODO: Replace account and license key with your credentials
 new ATConfig('Development', array(
     'url' => 'https://development.avalara.net',
-    'account' => '110000000',
-    'license' => '1A2B3C4D5E6F7G8')
+    'account' => '1234567890',
+    'license' => 'A1B2C3D4E5F6G7H8')
 );
 $client = new AddressServiceSoap('Development');
 try
     {
     $address = new Address();
-    $address->setLine1("100 Ravine Lane");
-    $address->setLine2("Suite 220");
+    $address->setLine1("118 N Clark St");
+    $address->setLine2("");
     $address->setLine3("");
-    $address->setCity("Bainbridge Island");
-    $address->setRegion("WA");
-    $address->setPostalCode("98110");
+    $address->setCity("Chicago");
+    $address->setRegion("IL");
+    $address->setPostalCode("60602");
     $textCase = TextCase::$Mixed;
     $coordinates = 1;
 //Request      

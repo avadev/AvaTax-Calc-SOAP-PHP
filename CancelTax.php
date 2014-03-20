@@ -4,14 +4,14 @@ require('AvaTax4PHP\AvaTax.php');
 //TODO: Replace account and license key with your credentials
 new ATConfig('Development', array(
     'url' => 'https://development.avalara.net',
-    'account' => '110000000',
-    'license' => '1A2B3C4D5E6F7G8')
+    'account' => '1234567890',
+    'license' => 'A1B2C3D4E5F6G7H8')
 );
 $client = new TaxServiceSoap('Development');
 $request = new CancelTaxRequest();
-$request->setDocCode('10000000');
+$request->setDocCode('INV001');
 $request->setDocType('SalesInvoice');
-$request->setCompanyCode("Cust1234");
+$request->setCompanyCode("APITrialCompany");
 $request->setCancelCode('DocDeleted');
 try {
   $result = $client->cancelTax($request);
