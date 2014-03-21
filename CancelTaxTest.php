@@ -12,7 +12,7 @@ $request = new CancelTaxRequest();
 $request->setDocCode('INV001');
 $request->setDocType('SalesInvoice');
 $request->setCompanyCode("APITrialCompany");
-$request->setCancelCode('DocDeleted');
+$request->setCancelCode('DocVoided');
 try {
   $result = $client->cancelTax($request);
   echo 'CancelTax ResultCode is: ' . $result->getResultCode() . "\n";

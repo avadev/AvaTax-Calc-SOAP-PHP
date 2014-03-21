@@ -120,27 +120,6 @@ $line2->setQty(3);
 $line2->setAmount(150);
 $line2->setTaxCode("PC030147");
 //
-//*Situational Request Line Parameters
-//$line2->setDiscounted(true);
-//$line2->setTaxIncluded(true);
-//$line2->setRevAcct("");
-//$line2->setRef1("ref123");
-//$line2->setRef2("ref456");
-//$line2->setExemptionNo("12345");
-//$line2->setCustomerUsageType("L");
-//*TaxOverride at the line level
-//
-//*Note: TaxOverride can exist at the 
-//*      Document Level OR Line Level
-//*      Never both at the same time.
-//$taxOverride = new TaxOverride();
-//$line2->setTaxOverride($taxOverride); 
-//$taxOverride->setTaxOverrideType(TaxOverrideType::$TaxDate);
-//$taxOverride->setTaxAmount(0.00);
-//$taxOverride->setReason("Adjustment for return");
-//$taxOverride->setTaxDate("2013-07-01");
-//$request->setLines(array($line2));
-//
 // Line Level 3
 $line3 = new Line();
 $line3->setOriginAddress($OrigAddress);
@@ -151,26 +130,6 @@ $line3->setDescription("Shipping Charge");
 $line3->setQty(1);
 $line3->setAmount(15);
 $line3->setTaxCode("FR");
-//
-//*Situational Request Line Parameters
-//$line3->setDiscounted(true);
-//$line3->setTaxIncluded(true);
-//$line3->setRevAcct("");
-//$line3->setRef1("ref123");
-//$line3->setRef2("ref456");
-//$line3->setExemptionNo("12345");
-//$line3->setCustomerUsageType("L");
-//
-//*TaxOverride at the line level
-//*Note: TaxOverride can exist at the 
-//*      Document Level OR Line Level
-//*      Never both at the same time.
-//$taxOverride = new TaxOverride();
-//$line3->setTaxOverride($taxOverride);
-//$taxOverride->setTaxOverrideType(TaxOverrideType::$TaxDate);
-//$taxOverride->setTaxAmount(0.00);
-//$taxOverride->setReason("Adjustment for return");
-//$taxOverride->setTaxDate("2013-07-01");
 //
 //Compile all three lines into an array
 $request->setLines(array($line1, $line2, $line3));
