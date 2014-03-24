@@ -194,18 +194,18 @@ try
         echo "TotalAmount: " . $adjustTaxResult->getTotalAmount() . "\n";
         echo "TotalTax: " . $adjustTaxResult->getTotalTax() . "\n";
 //Line Level Results (from TaxLines array class)
-        foreach ($adjustTaxResult->getTaxLines() as $ctl)
+        foreach ($adjustTaxResult->getTaxLines() as $currentTaxLine)
             {
-            echo "     Line: " . $ctl->getNo() .
-            " Tax: " . $ctl->getTax() .
-            " TaxCode: " . $ctl->getTaxCode() . "\n";
+            echo "     Line: " . $currentTaxLine->getNo() .
+            " Tax: " . $currentTaxLine->getTax() .
+            " TaxCode: " . $currentTaxLine->getTaxCode() . "\n";
 //Line Level Results
-            foreach ($ctl->getTaxDetails() as $ctd)
+            foreach ($currentTaxLine->getTaxDetails() as $currentTaxDetail)
                 {
-                echo "          Juris Type: " . $ctd->getJurisType() .
-                "; Juris Name: " . $ctd->getJurisName() .
-                "; Rate: " . $ctd->getRate() .
-                "; Amt: " . $ctd->getTax() . "\n";
+                echo "          Juris Type: " . $currentTaxDetail->getJurisType() .
+                "; Juris Name: " . $currentTaxDetail->getJurisName() .
+                "; Rate: " . $currentTaxDetail->getRate() .
+                "; Amt: " . $currentTaxDetail->getTax() . "\n";
                 }
             echo"\n";
             }

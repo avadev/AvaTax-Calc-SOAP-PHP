@@ -1,11 +1,13 @@
 <?php
 require('AvaTax4PHP\AvaTax.php');
 //Authentication
-//TODO: Replace sample account and license key with your credentials
+//TODO: Replace account and license key with your credentials
 new ATConfig('Development', array(
     'url' => 'https://development.avalara.net',
     'account' => '1234567890',
-    'license' => 'A1B2C3D4E5F6G7H8')
+    'license' => 'A1B2C3D4E5F6G7H8',
+	'client' => 'AvaTaxSample',
+	'name' => '14.2')
 );
 $client = new TaxServiceSoap('Development');
 $request = new GetTaxRequest();
@@ -77,6 +79,8 @@ $thirdaddress->setCity("Bainbridge Island");
 $thirdaddress->setRegion("WA");
 $thirdaddress->setPostalCode("98110");
 $thirdaddress->setCountry("US");
+//$destination->setLatitude("47.626930");
+//$destination->setLongitude("-122.521004");
 $request->setAddressCode($thirdaddress);
 //
 // Line Level 1
@@ -147,13 +151,13 @@ try
         echo "TotalAmount: " . $getTaxResult->getTotalAmount() . "\n";
         echo "TotalTax: " . $getTaxResult->getTotalTax() . "\n";
 //Line Level Results (from TaxLines array class)
-        foreach ($getTaxResult->getTaxLines() as $ctl)
+        foreach ($getTaxResult->getTaxLines() as $currentTaxLine)
             {
-            echo "     Line: " . $ctl->getNo() . " Tax: " . $ctl->getTax() . " TaxCode: " . $ctl->getTaxCode() . "\n";
+            echo "     Line: " . $currentTaxLine->getNo() . " Tax: " . $currentTaxLine->getTax() . " TaxCode: " . $currentTaxLine->getTaxCode() . "\n";
 //Line Level Results
-            foreach ($ctl->getTaxDetails() as $ctd)
+            foreach ($currentTaxLine->getTaxDetails() as $currentTaxDetails)
                 {
-                echo "          Juris Type: " . $ctd->getJurisType() . "; Juris Name: " . $ctd->getJurisName() . "; Rate: " . $ctd->getRate() . "; Amt: " . $ctd->getTax() . "\n";
+                echo "          Juris Type: " . $currentTaxDetails->getJurisType() . "; Juris Name: " . $currentTaxDetails->getJurisName() . "; Rate: " . $currentTaxDetails->getRate() . "; Amt: " . $currentTaxDetails->getTax() . "\n";
                 }
             echo"\n";
             }
