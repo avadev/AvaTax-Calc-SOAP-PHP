@@ -80,8 +80,9 @@
       <td>This document describing how to make use of the sample API code.</td>
     </tr>
   </table>
-  <h4><strong>Resources</strong><br />
+<h4><strong>Resources</strong><br />
   </h4>
   <p>Developer API Documentation is located here: <a href="http://developer.avalara.com/api-docs" target="_blank">http://developer.avalara.com/api-docs</a></p>
-  <p>Find out what other developers are talking about on the <em>Avalara Developer Community Forum</em> located here: <a href="https://community.avalara.com/avalara/categories/avalara_developersintegrations" target="_blank">https://community.avalara.com/avalara/categories/avalara_developersintegrations</a></p>
-  <p>Frequently asked questions regarding the Avalara product is located here: <a href="https://help.avalara.com/" target="_blank">https://help.avalara.com/</a></p>
+  <p>The Avalara AvaTax API Reference is located here: <a href="http://developer.avalara.com/api-docs/avalara-avatax-api-reference" target="_blank">http://developer.avalara.com/api-docs/avalara-avatax-api-reference</a></p>
+  <p>Find out what other developers are talking about on the <em>Avalara Developer Community Forum</em> located here: <a href="https://community.avalara.com/avalara/category_sets/developers" target="_blank">https://community.avalara.com/avalara/category_sets/developers</a></p>
+<p>Frequently asked questions regarding the Avalara product is located here: <a href="https://help.avalara.com/" target="_blank">https://help.avalara.com/</a></p>
