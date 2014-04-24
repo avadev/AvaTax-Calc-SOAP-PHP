@@ -52,10 +52,10 @@
       <td><strong>CancelTaxTest.php</strong></td>
       <td><a href="http://developer.avalara.com/api-docs/avalara-avatax-api-reference#cat-CancelTax">CancelTax</a> is a method that cancels a tax document specified by the DocId, DocCode, and DocType parameters. See&nbsp;<a href="http://developer.avalara.com/api-docs/avalara-avatax-api-reference#cat-CancelTax" target="_blank">CancelTax</a>&nbsp;for more details.</td>
     </tr>
-    <tr>
+    <!--tr>
       <td><strong>ReconcileTaxHistoryTest.php</strong></td>
       <td>ReconcileTaxHistory is a method that  will produce a listing of documents saved to the AvaTax database -based on a range of dates or document codes.</td>
-    </tr>
+    </tr-->
     <tr>
       <td><strong>/AvaTax4PHP</strong></td>
       <td><em>../AvaTax4PHP is a Directory</em> containing the core classes that enable the API samples to make Avatax web service calls.</td>
