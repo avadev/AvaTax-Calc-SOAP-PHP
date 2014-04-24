@@ -1,15 +1,15 @@
 <?php
-require('AvaTax4PHP\AvaTax.php');
+require('C:\Avalara\avatax4PHP-GitHub\AvaTax4PHP\AvaTax.php');
 //Authentication
 //TODO: Replace account and license key with your credentials
 new ATConfig('Development', array(
     'url' => 'https://development.avalara.net',
     'account' => '1234567890',
     'license' => 'A1B2C3D4E5F6G7H8',
-	'client' => 'AvaTaxSample',
-	'name' => '14.2')
+    'client' => 'AvaTaxSample',
+    'name' => '14.2')
 );
-$client = new AddressServiceSoap('Development');
+$addressSvc = new AddressServiceSoap('Development');
 try
     {
     $address = new Address();
@@ -22,21 +22,20 @@ try
     $textCase = TextCase::$Mixed;
     $coordinates = 1;
 //Request      
-    $request = new ValidateRequest($address, ($textCase ? $textCase : TextCase::$Default), $coordinates);
-    $result = $client->Validate($request);
+    $validateRequest = new ValidateRequest($address, ($textCase ? $textCase : TextCase::$Default), $coordinates);
+    $validateResult = $addressSvc->Validate($validateRequest);
 //Results  
-// Output to console the result (Success or Not Success)
-    echo "\n" . 'Validate ResultCode is: ' . $result->getResultCode() . "\n";
-    if ($result->getResultCode() != SeverityLevel::$Success)
+    echo "\n" . 'Validate ResultCode is: ' . $validateResult->getResultCode() . "\n";
+    if ($validateResult->getResultCode() != SeverityLevel::$Success)
         {
-        foreach ($result->getMessages() as $msg)
+        foreach ($validateResult->getMessages() as $message)
             {
-            echo $msg->getName() . ": " . $msg->getSummary() . "\n";
+            echo $message->getName() . ": " . $message->getSummary() . "\n";
             }
         } else
         {
         echo "Normalized Address: \n";
-        foreach ($result->getvalidAddresses() as $valid)
+        foreach ($validateResult->getvalidAddresses() as $valid)
             {
             echo "Line 1: " . $valid->getline1() . "\n";
             echo "Line 2: " . $valid->getline2() . "\n";
@@ -60,12 +59,12 @@ try
         }
     } catch (SoapFault $exception)
     {
-    $msg = "Exception: ";
+    $message = "Exception: ";
     if ($exception)
         {
-        $msg .= $exception->faultstring;
+        $message .= $exception->faultstring;
         }
-    echo $msg . "\n";
-    echo $client->__getLastRequest() . "\n";
-    echo $client->__getLastResponse() . "\n   ";
+    echo $message . "\n";
+    echo $addressSvc->__getLastRequest() . "\n";
+    echo $addressSvc->__getLastResponse() . "\n   ";
     }

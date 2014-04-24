@@ -5,30 +5,32 @@ require('AvaTax4PHP\AvaTax.php');
 new ATConfig('Development', array(
     'url' => 'https://development.avalara.net',
     'account' => '1234567890',
-    'license' => 'A1B2C3D4E5F6G7H8')
+    'license' => 'A1B2C3D4E5F6G7H8',
+    'client' => 'AvaTaxSample',
+    'name' => '14.2')
 );
-$client = new TaxServiceSoap('Development');
-$request = new CancelTaxRequest();
-$request->setDocCode('INV001');
-$request->setDocType('SalesInvoice');
-$request->setCompanyCode("APITrialCompany");
-$request->setCancelCode('DocVoided');
+$taxSvc = new TaxServiceSoap('Development');
+$cancelTaxRequest = new CancelTaxRequest();
+$cancelTaxRequest->setDocCode('INV001');
+$cancelTaxRequest->setDocType('SalesInvoice');
+$cancelTaxRequest->setCompanyCode("APITrialCompany");
+$cancelTaxRequest->setCancelCode('DocVoided');
 try {
-  $result = $client->cancelTax($request);
-  echo 'CancelTax ResultCode is: ' . $result->getResultCode() . "\n";
-  if ($result->getResultCode() != "Success") {
-    foreach ($result->getMessages() as $msg) {
-      echo $msg->getName() . ": " . $msg->getSummary() . "\n";
+  $cancelTaxResult = $taxSvc->cancelTax($cancelTaxRequest);
+  echo 'CancelTax ResultCode is: ' . $cancelTaxResult->getResultCode() . "\n";
+  if ($cancelTaxResult->getResultCode() != "Success") {
+    foreach ($cancelTaxResult->getMessages() as $message) {
+      echo $message->getName() . ": " . $message->getSummary() . "\n";
     }
   }
 } catch (SoapFault $exception)
     {
-    $msg = "Exception: ";
+    $message = "Exception: ";
     if ($exception)
         {
-        $msg .= $exception->faultstring;
+        $message .= $exception->faultstring;
         }
-    echo $msg . "\n";
-    echo $client->__getLastRequest() . "\n";
-    echo $client->__getLastResponse() . "\n   ";
+    echo $message . "\n";
+    echo $taxSvc->__getLastRequest() . "\n";
+    echo $taxSvc->__getLastResponse() . "\n   ";
     }

@@ -9,30 +9,31 @@ new ATConfig('Development', array(
 	'client' => 'AvaTaxSample',
 	'name' => '14.2')
 );
-$client = new TaxServiceSoap('Development');
+$taxSvc = new TaxServiceSoap('Development');
+
 try
     {
-    $result = $client->ping("");
-    echo 'Ping ResultCode is: ' . $result->getResultCode() . "\n";
-    if ($result->getResultCode() != SeverityLevel::$Success)
+    $pingResult = $taxSvc->ping("");
+    echo 'Ping ResultCode is: ' . $pingResult->getResultCode() . "\n";
+    if ($pingResult->getResultCode() != SeverityLevel::$Success)
         {
-        foreach ($result->Messages() as $msg)
+        foreach ($pingResult->Messages() as $messages)
             {
-            echo $msg->Name() . ": " . $msg->Summary() . "\n";
+            echo $messages->Name() . ": " . $messages->Summary() . "\n";
             }
         } else
         {
-        echo 'Ping Version is: ' . $result->getVersion() . "\n";
-        echo 'TransactionID is: ' . $result->getTransactionId() . "\n\n";
+        echo 'Ping Version is: ' . $pingResult->getVersion() . "\n";
+        echo 'TransactionID is: ' . $pingResult->getTransactionId() . "\n\n";
         }
    } catch (SoapFault $exception)
     {
-    $msg = "Exception: ";
+    $messages = "Exception: ";
     if ($exception)
         {
-        $msg .= $exception->faultstring;
+        $messages .= $exception->faultstring;
         }
-    echo $msg . "\n";
-    echo $client->__getLastRequest() . "\n";
-    echo $client->__getLastResponse() . "\n   ";
+    echo $messages . "\n";
+    echo $taxSvc->__getLastRequest() . "\n";
+    echo $taxSvc->__getLastResponse() . "\n   ";
     }
