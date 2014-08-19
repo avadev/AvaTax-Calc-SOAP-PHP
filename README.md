@@ -18,7 +18,7 @@
     </tr>
     <tr>
       <td><strong>Credentials.php</strong></td>
-      <td> included in the sample API contains authentication elements (URL, Account, LicenseKey, Client) that are passed into the ATConfig object which ontains various service configuration parameters as class static variables. </td>
+      <td>contains authentication elements (URL, Account, LicenseKey, Client) that are passed into the ATConfig object which ontains various service configuration parameters as class static variables. </td>
     </tr>
     <tr>
       <td><strong>IsAuthorizedTest.php</strong></td>
