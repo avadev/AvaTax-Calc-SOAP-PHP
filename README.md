@@ -12,13 +12,13 @@
     <em><strong>Note: </strong></em>For <em>*nix</em>, it may be necessary to recompile your PHP interpreter with <em>soap.dll</em> and <em>oenssl.dll</em> enabled. </li>
   <h4><strong>Samples Included</strong></h4>
   <table width="1000" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-      <td><strong>Credentials.php</strong></td>
-      <td> The Credentials.php class included in the sample API contains authentication elements (URL, Account, LicenseKey, Client) that are passed into the ATConfig object which ontains various service configuration parameters as class static variables. </td>
-    </tr>
     <tr>
       <td width="172"><div align="center"><strong>API</strong></div></td>
       <td width="828"><div align="center"><strong>Method Demonstrated</strong></div></td>
+    </tr>
+    <tr>
+      <td><strong>Credentials.php</strong></td>
+      <td> included in the sample API contains authentication elements (URL, Account, LicenseKey, Client) that are passed into the ATConfig object which ontains various service configuration parameters as class static variables. </td>
     </tr>
     <tr>
       <td><strong>IsAuthorizedTest.php</strong></td>
