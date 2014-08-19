@@ -1,15 +1,10 @@
 <?php
-
 require('AvaTax4PHP\AvaTax.php');
 //Authentication
-//TODO: Replace account and license key with your credentials
-new ATConfig('Development', array(
-    'url' => 'https://development.avalara.net',
-    'account' => '1234567890',
-    'license' => 'A1B2C3D4E5F6G7H8',
-    'client' => 'AvaTaxSample',
-    'name' => '14.2')
-);
+//TODO: Modify the account and license key values
+//      contained set in Credentials.php with your own
+require('Credentials.php');
+
 $taxSvc = new TaxServiceSoap('Development');
 //GetTaxRequest to be modified (duplicate of an original)
 $getTaxRequest = new GetTaxRequest();
