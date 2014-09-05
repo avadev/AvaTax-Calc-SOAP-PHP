@@ -1,4 +1,6 @@
-  <p>The <strong>AvaTaxCalc PHP (for SOAP) Sample</strong> is open source designed to assist you with developing your own <em>custom</em> integration to your chosen web store or e-commerce solution. To run selected samples you will need to modify the Credentials.php class included with this sample with your own account and license key.</p>
+[Other Samples](http://developer.avalara.com/api-docs/api-sample-code)
+
+<p>The <strong>AvaTaxCalc PHP (for SOAP) Sample</strong> is open source designed to assist you with developing your own <em>custom</em> integration to your chosen web store or e-commerce solution. To run selected samples you will need to modify the Credentials.php class included with this sample with your own account and license key.</p>
   <em><strong>Note: </strong></em>The Avalara Admin Account <em>Username</em> and <em>Password</em> can be used in place of <em>Account</em> and <em>License Key</em>
  <p>See http://developer.avalara.com/api-docs/designing-your-integration for more information.
   </p>
