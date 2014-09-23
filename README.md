@@ -5,7 +5,7 @@
  <p>See http://developer.avalara.com/api-docs/designing-your-integration for more information.
   </p>
   <h4><strong>Installation Dependencies</strong></h4>
-  <li>PHP V5.2 or later</li>
+  <li>PHP V5.3 or later</li>
   <li><em>SSL</em> and <em>SoapClient</em> support must be enabled for your PHP interpreter. For windows, add the following extentions to php.ini: <br />
     <br />
     <span class="cmeta"><code>extension=php_soap.dll</code><br />

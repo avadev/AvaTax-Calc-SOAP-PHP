@@ -1,9 +1,13 @@
 <?php
-require('C:\Avalara\avatax4PHP-GitHub\AvaTax4PHP\AvaTax.php');
+require('vendor/autoload.php');
 //Authentication
 //TODO: Modify the account and license key values
 //      contained set in Credentials.php with your own
 require('Credentials.php');
+use Avatax\Address;
+use Avatax\AddressServiceSoap;
+use Avatax\TextCase;
+use Avatax\ValidateRequest;
 
 $addressSvc = new AddressServiceSoap('Development');
 try

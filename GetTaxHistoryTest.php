@@ -1,9 +1,14 @@
 <?php
-require('AvaTax4PHP\AvaTax.php');
+require('vendor/autoload.php');
 //Authentication
 //TODO: Modify the account and license key values
 //      contained set in Credentials.php with your own
 require('Credentials.php');
+use Avatax\GetTaxHistoryRequest;
+use Avatax\DetailLevel;
+use Avatax\DocumentType;
+use Avatax\SeverityLevel;
+use Avatax\TaxServiceSoap;
 
 $taxSvc = new TaxServiceSoap('Development');
 $getTaxHistoryRequest = new GetTaxHistoryRequest();
