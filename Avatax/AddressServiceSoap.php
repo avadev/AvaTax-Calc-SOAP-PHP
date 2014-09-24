@@ -1,8 +1,8 @@
 <?php
+
 /**
  * AddressServiceSoap.class.php
  */
- 
 /**
  * Proxy interface for the Avalara Address Web Service. 
  *
@@ -20,27 +20,29 @@
  * @package   Address
  * 
  */
+
 namespace Avatax;
-class AddressServiceSoap extends AvalaraSoapClient
-{
+
+class AddressServiceSoap extends AvalaraSoapClient {
+
     static private $servicePath = '/Address/AddressSvc.asmx';
     static protected $classmap = array(
-        							'Validate' => 'Validate',
-                                    'BaseRequest' => 'BaseRequest',
-                                    'ValidateRequest' => 'ValidateRequest',
-                                    'BaseAddress' => 'BaseAddress',
-                                    'ValidAddress' => 'ValidAddress',
-                                    'TextCase' => 'TextCase',                                    
-                                    'ValidateResult' => 'ValidateResult',                                    
-                                    'BaseResult' => 'BaseResult',
-                                    'SeverityLevel' => 'SeverityLevel',
-                                    'Message' => 'Message',
-                                    'Profile' => 'Profile',
-                                    'Ping' => 'Ping',                                    
-                                    'PingResult' => 'PingResult',
-                                    'IsAuthorized' => 'IsAuthorized',                                    
-                                    'IsAuthorizedResult' => 'IsAuthorizedResult');
-        
+        'Validate' => 'Avatax\Validate',
+        'BaseRequest' => 'Avatax\BaseRequest',
+        'ValidateRequest' => 'Avatax\ValidateRequest',
+        'BaseAddress' => 'Avatax\BaseAddress',
+        'ValidAddress' => 'Avatax\ValidAddress',
+        'TextCase' => 'Avatax\TextCase',
+        'ValidateResult' => 'Avatax\ValidateResult',
+        'BaseResult' => 'Avatax\BaseResult',
+        'SeverityLevel' => 'Avatax\SeverityLevel',
+        'Message' => 'Avatax\Message',
+        'Profile' => 'Avatax\Profile',
+        'Ping' => 'Avatax\Ping',
+        'PingResult' => 'Avatax\PingResult',
+        'IsAuthorized' => 'Avatax\IsAuthorized',
+        'IsAuthorizedResult' => 'Avatax\IsAuthorizedResult');
+
     /**
      * Construct a proxy for Avalara's Address Web Service using the default URL as coded in the class or programatically set.
      * 
@@ -53,19 +55,15 @@ class AddressServiceSoap extends AvalaraSoapClient
      * @see AvalaraSoapClient
      * @see TaxServiceSoap
      */
-
-    public function __construct($configurationName = 'Default')
-    {
+    public function __construct($configurationName = 'Default') {
         $config = new ATConfig($configurationName);
-        $this->client = new DynamicSoapClient   (
-            $config->addressWSDL,
-            array
+        $this->client = new DynamicSoapClient(
+                $config->addressWSDL, array
             (
-                'location' => $config->url.$config->addressService, 
-                'trace' => $config->trace,
-                'classmap' => AddressServiceSoap::$classmap
-            ), 
-            $config
+            'location' => $config->url . $config->addressService,
+            'trace' => $config->trace,
+            'classmap' => AddressServiceSoap::$classmap
+                ), $config
         );
     }
 
@@ -87,12 +85,10 @@ class AddressServiceSoap extends AvalaraSoapClient
      * @return IsAuthorizedResult
      * @throws SoapFault
      */
-
-    public function isAuthorized($operations)
-    {
+    public function isAuthorized($operations) {
         return $this->client->IsAuthorized(array('Operations' => $operations))->IsAuthorizedResult;
     }
-    
+
     /**
      * Verifies connectivity to the web service and returns version
      * information about the service.
@@ -104,12 +100,10 @@ class AddressServiceSoap extends AvalaraSoapClient
      * @return PingResult
      * @throws SoapFault
      */
-
-    public function ping($message = '')
-    {
+    public function ping($message = '') {
         return $this->client->Ping(array('Message' => $message))->PingResult;
     }
-    
+
     /**
      * Validates an address and returns a normalized address or error.
      * {@link ValidAddress} objects in a {@link ValidateResult} object.
@@ -136,10 +130,8 @@ class AddressServiceSoap extends AvalaraSoapClient
      *
      * @throws SoapFault
      */
-	 public function validate($validateRequest)
-    {
+    public function validate($validateRequest) {
         return $this->client->Validate(array('ValidateRequest' => $validateRequest))->ValidateResult;
-    }     
-
+    }
 
 }

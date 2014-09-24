@@ -18,7 +18,7 @@
  * @package   Base
  */
 namespace Avatax;
-class DynamicSoapClient extends SoapClient
+class DynamicSoapClient extends \SoapClient
 {
     private $config;
     public function __construct($wsdl,$options,&$config)
@@ -29,8 +29,8 @@ class DynamicSoapClient extends SoapClient
 
 	public function __call($n,$args)
 	{
-        $profileHeader = new SoapHeader('http://avatax.avalara.com/services','Profile',new SoapVar($this->profileXML(),XSD_ANYXML));
-        $securityHeader = new SoapHeader('http://avatax.avalara.com/services','Security',new SoapVar($this->securityXML(),XSD_ANYXML));
+        $profileHeader = new \SoapHeader('http://avatax.avalara.com/services','Profile',new \SoapVar($this->profileXML(),XSD_ANYXML));
+        $securityHeader = new \SoapHeader('http://avatax.avalara.com/services','Security',new \SoapVar($this->securityXML(),XSD_ANYXML));
         	$result = $this->__soapCall($n,$args,NULL,array($securityHeader,$profileHeader));
         return $result;
 	}

@@ -1,8 +1,8 @@
 <?php
+
 /**
  * TaxServiceSoap.class.php
  */
-
 /**
  * Proxy interface for the Avalara Tax Web Service.  It contains methods that perform remote calls
  * to the Avalara Tax Service. 
@@ -21,58 +21,55 @@
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   Tax
  */
+
 namespace Avatax;
-class TaxServiceSoap extends AvalaraSoapClient
-{
+
+class TaxServiceSoap extends AvalaraSoapClient {
+
     static $servicePath = '/Tax/TaxSvc.asmx';
     static protected $classmap = array(
-        'BaseAddress' => 'Address',
-        'ValidAddress' => 'ValidAddress',
-        'Message' => 'Message',
-        'ValidateRequest' => 'ValidateRequest',
-        'IsAuthorizedResult' => 'IsAuthorizedResult',
-        'PingResult' => 'PingResult',
-        'ValidateResult' => 'ValidateResult',
-		'Line'=>'Line',
-		'AdjustTaxRequest'=>'AdjustTaxRequest',
-		'AdjustTaxResult'=>'AdjustTaxResult',
-		'CancelTaxRequest'=>'CancelTaxRequest',
-		'CancelTaxResult'=>'CancelTaxResult',
-		'CommitTaxRequest'=>'CommitTaxRequest',
-		'CommitTaxResult'=>'CommitTaxResult',
-		'GetTaxRequest'=>'GetTaxRequest',
-		'GetTaxResult'=>'GetTaxResult',
-		'GetTaxHistoryRequest'=>'GetTaxHistoryRequest',
-		'GetTaxHistoryResult'=>'GetTaxHistoryResult',
-		'PostTaxRequest'=>'PostTaxRequest',
-		'PostTaxResult'=>'PostTaxResult',
-		'ReconcileTaxHistoryRequest'=>'ReconcileTaxHistoryRequest',
-		'ReconcileTaxHistoryResult'=>'ReconcileTaxHistoryResult',
-		'TaxLine'=>'TaxLine',
-        'TaxDetail' => 'TaxDetail',
-		'ApplyPaymentRequest'=>'ApplyPaymentRequest',
-		'ApplyPaymentResult'=>'ApplyPaymentResult',
-		'BaseResult'=>'BaseResult',
-		'TaxOverride'=>'TaxOverride'			
-		);
-        
-public function __construct($configurationName = 'Default')
-    {
+        'BaseAddress' => 'Avatax\Address',
+        'ValidAddress' => 'Avatax\ValidAddress',
+        'Message' => 'Avatax\Message',
+        'ValidateRequest' => 'Avatax\ValidateRequest',
+        'IsAuthorizedResult' => 'Avatax\IsAuthorizedResult',
+        'PingResult' => 'Avatax\PingResult',
+        'ValidateResult' => 'Avatax\ValidateResult',
+        'Line' => 'Avatax\Line',
+        'AdjustTaxRequest' => 'Avatax\AdjustTaxRequest',
+        'AdjustTaxResult' => 'Avatax\AdjustTaxResult',
+        'CancelTaxRequest' => 'Avatax\CancelTaxRequest',
+        'CancelTaxResult' => 'Avatax\CancelTaxResult',
+        'CommitTaxRequest' => 'Avatax\CommitTaxRequest',
+        'CommitTaxResult' => 'Avatax\CommitTaxResult',
+        'GetTaxRequest' => 'Avatax\GetTaxRequest',
+        'GetTaxResult' => 'Avatax\GetTaxResult',
+        'GetTaxHistoryRequest' => 'Avatax\GetTaxHistoryRequest',
+        'GetTaxHistoryResult' => 'Avatax\GetTaxHistoryResult',
+        'PostTaxRequest' => 'Avatax\PostTaxRequest',
+        'PostTaxResult' => 'Avatax\PostTaxResult',
+        'ReconcileTaxHistoryRequest' => 'Avatax\ReconcileTaxHistoryRequest',
+        'ReconcileTaxHistoryResult' => 'Avatax\ReconcileTaxHistoryResult',
+        'TaxLine' => 'Avatax\TaxLine',
+        'TaxDetail' => 'Avatax\TaxDetail',
+        'ApplyPaymentRequest' => 'Avatax\ApplyPaymentRequest',
+        'ApplyPaymentResult' => 'Avatax\ApplyPaymentResult',
+        'BaseResult' => 'Avatax\BaseResult',
+        'TaxOverride' => 'Avatax\TaxOverride'
+    );
+
+    public function __construct($configurationName = 'Default') {
         $config = new ATConfig($configurationName);
-        
-        $this->client = new DynamicSoapClient   (
-            $config->taxWSDL,
-            array
+
+        $this->client = new DynamicSoapClient(
+                $config->taxWSDL, array
             (
-                'location' => $config->url.$config->taxService, 
-                'trace' => $config->trace,
-                'classmap' => TaxServiceSoap::$classmap
-            ), 
-            $config
+            'location' => $config->url . $config->taxService,
+            'trace' => $config->trace,
+            'classmap' => TaxServiceSoap::$classmap
+                ), $config
         );
     }
-
-
 
     /**
      * Calculates taxes on a document such as a sales order, sales invoice, purchase order, purchase invoice, or credit memo.
@@ -83,10 +80,9 @@ public function __construct($configurationName = 'Default')
      * @return GetTaxResult
      * @throws SoapFault
      */
-    public function getTax(&$getTaxRequest)
-    {
-		$getTaxRequest->prepare();
-		return $this->client->GetTax(array('GetTaxRequest' => $getTaxRequest))->GetTaxResult;
+    public function getTax(&$getTaxRequest) {
+        $getTaxRequest->prepare();
+        return $this->client->GetTax(array('GetTaxRequest' => $getTaxRequest))->GetTaxResult;
     }
 
     /**
@@ -104,13 +100,12 @@ public function __construct($configurationName = 'Default')
      * @return a {@link GetTaxHistoryResult} object
      * @throws SoapFault
      */
-    /*public com.avalara.avatax.services.tax.GetTaxHistoryResult getTaxHistory(com.avalara.avatax.services.tax.GetTaxHistoryRequest getTaxHistoryRequest) throws SoapFault;
-	*/
-	public function getTaxHistory(&$getTaxHistoryRequest)
-    {
-		$result = $this->client->GetTaxHistory(array('GetTaxHistoryRequest'=>$getTaxHistoryRequest))->GetTaxHistoryResult;
-		$result->getGetTaxRequest()->postFetch();
-		return $result;
+    /* public com.avalara.avatax.services.tax.GetTaxHistoryResult getTaxHistory(com.avalara.avatax.services.tax.GetTaxHistoryRequest getTaxHistoryRequest) throws SoapFault;
+     */
+    public function getTaxHistory(&$getTaxHistoryRequest) {
+        $result = $this->client->GetTaxHistory(array('GetTaxHistoryRequest' => $getTaxHistoryRequest))->GetTaxHistoryResult;
+        $result->getGetTaxRequest()->postFetch();
+        return $result;
     }
 
     /**
@@ -128,12 +123,10 @@ public function __construct($configurationName = 'Default')
      * @return a {@link PostTaxResult} object
      * @throws SoapFault
      */
-	 
-    /*public com.avalara.avatax.services.tax.PostTaxResult postTax(com.avalara.avatax.services.tax.PostTaxRequest postTaxRequest) throws SoapFault;
-	*/
-    public function postTax(&$postTaxRequest)
-    {		
-		return $this->client->PostTax(array('PostTaxRequest'=>$postTaxRequest))->PostTaxResult;
+    /* public com.avalara.avatax.services.tax.PostTaxResult postTax(com.avalara.avatax.services.tax.PostTaxRequest postTaxRequest) throws SoapFault;
+     */
+    public function postTax(&$postTaxRequest) {
+        return $this->client->PostTax(array('PostTaxRequest' => $postTaxRequest))->PostTaxResult;
     }
 
     /**
@@ -152,13 +145,12 @@ public function __construct($configurationName = 'Default')
      * @return a {@link CommitTaxResult} object
      * @throws SoapFault
      */
-	 
-    /*public com.avalara.avatax.services.tax.CommitTaxResult commitTax(com.avalara.avatax.services.tax.CommitTaxRequest commitTaxRequest) throws SoapFault;
-	*/
-	public function commitTax(&$commitTaxRequest)
-    {
-		return $this->client->CommitTax(array('CommitTaxRequest'=>$commitTaxRequest))->CommitTaxResult;
+    /* public com.avalara.avatax.services.tax.CommitTaxResult commitTax(com.avalara.avatax.services.tax.CommitTaxRequest commitTaxRequest) throws SoapFault;
+     */
+    public function commitTax(&$commitTaxRequest) {
+        return $this->client->CommitTax(array('CommitTaxRequest' => $commitTaxRequest))->CommitTaxResult;
     }
+
     /**
      * Cancels a previously calculated tax;  This is for use as a
      * compensating action when posting on the client fails to complete.
@@ -180,11 +172,10 @@ public function __construct($configurationName = 'Default')
      * @return   a {@link CancelTaxResult} object
      * @throws SoapFault
      */
-     /* public com.avalara.avatax.services.tax.CancelTaxResult cancelTax(com.avalara.avatax.services.tax.CancelTaxRequest cancelTaxRequest) throws SoapFault;
-	 */
-	public function cancelTax(&$cancelTaxRequest)
-    {
-		return $this->client->CancelTax(array('CancelTaxRequest'=>$cancelTaxRequest))->CancelTaxResult;
+    /* public com.avalara.avatax.services.tax.CancelTaxResult cancelTax(com.avalara.avatax.services.tax.CancelTaxRequest cancelTaxRequest) throws SoapFault;
+     */
+    public function cancelTax(&$cancelTaxRequest) {
+        return $this->client->CancelTax(array('CancelTaxRequest' => $cancelTaxRequest))->CancelTaxResult;
     }
 
     /**
@@ -216,32 +207,30 @@ public function __construct($configurationName = 'Default')
      * @return A collection of documents that have been posted or committed since the last reconciliation.
      * @throws SoapFault
      */
-    /*public com.avalara.avatax.services.tax.ReconcileTaxHistoryResult reconcileTaxHistory(com.avalara.avatax.services.tax.ReconcileTaxHistoryRequest reconcileTaxHistoryRequest) throws SoapFault;
-*/
-	public function reconcileTaxHistory(&$reconcileTaxHistoryRequest)
-    {
-		return $this->client->ReconcileTaxHistory(array('ReconcileTaxHistoryRequest'=>$reconcileTaxHistoryRequest))->ReconcileTaxHistoryResult;
+    /* public com.avalara.avatax.services.tax.ReconcileTaxHistoryResult reconcileTaxHistory(com.avalara.avatax.services.tax.ReconcileTaxHistoryRequest reconcileTaxHistoryRequest) throws SoapFault;
+     */
+    public function reconcileTaxHistory(&$reconcileTaxHistoryRequest) {
+        return $this->client->ReconcileTaxHistory(array('ReconcileTaxHistoryRequest' => $reconcileTaxHistoryRequest))->ReconcileTaxHistoryResult;
     }
 
-/**
+    /**
      * Adjusts a previously calculated tax.
      * <p>
      * This is only available for unlocked tax documents (Sales Invoices, Purchase Invoices).      * </p>
      * <p>
-      * </p>
+     * </p>
      *
      * @param adjustTaxRequest a {@link AdjustTaxRequest} object indicating the document that should be edited.
      * @return a {@link AdjustTaxResult} object
      * @throws SoapFault
      */
-	 
-    /*public com.avalara.avatax.services.tax.CommitTaxResult commitTax(com.avalara.avatax.services.tax.CommitTaxRequest commitTaxRequest) throws SoapFault;
-	*/
-	public function adjustTax(&$adjustTaxRequest)
-    {
-		$adjustTaxRequest->getGetTaxRequest()->prepare();
-		return $this->client->AdjustTax(array('AdjustTaxRequest'=>$adjustTaxRequest))->AdjustTaxResult;
+    /* public com.avalara.avatax.services.tax.CommitTaxResult commitTax(com.avalara.avatax.services.tax.CommitTaxRequest commitTaxRequest) throws SoapFault;
+     */
+    public function adjustTax(&$adjustTaxRequest) {
+        $adjustTaxRequest->getGetTaxRequest()->prepare();
+        return $this->client->AdjustTax(array('AdjustTaxRequest' => $adjustTaxRequest))->AdjustTaxResult;
     }
+
     /**
      * Checks authentication of and authorization to one or more
      * operations on the service.
@@ -260,13 +249,10 @@ public function __construct($configurationName = 'Default')
      * @return IsAuthorizedResult
      * @throws SoapFault
      */
-	 
-
-    public function isAuthorized($operations)
-    {
+    public function isAuthorized($operations) {
         return $this->client->IsAuthorized(array('Operations' => $operations))->IsAuthorizedResult;
     }
-    
+
     /**
      * Verifies connectivity to the web service and returns version
      * information about the service.
@@ -278,23 +264,19 @@ public function __construct($configurationName = 'Default')
      * @return PingResult
      * @throws SoapFault
      */
-
-    public function ping($message = '')
-    {
+    public function ping($message = '') {
         return $this->client->Ping(array('Message' => $message))->PingResult;
     }
-    
+
     /**
      * This method is used to apply a payment to a document for cash basis accounting. Applies a payment date to an existing invoice 
-	 * It sets the document PaymentDate and changes the reporting date from the DocDate default. It may be called before or after a document is committed. It should not be used for accrual basis accounting       
+     * It sets the document PaymentDate and changes the reporting date from the DocDate default. It may be called before or after a document is committed. It should not be used for accrual basis accounting       
      *
      * @param ApplyPaymentRequest $applyPaymentRequest
      * @return ApplyPaymentResult
      */
-    
-    public function applyPayment(&$applyPaymentRequest)
-    {		
-		return $this->client->ApplyPayment(array('ApplyPaymentRequest' => $applyPaymentRequest))->ApplyPaymentResult;
-    }    		    
+    public function applyPayment(&$applyPaymentRequest) {
+        return $this->client->ApplyPayment(array('ApplyPaymentRequest' => $applyPaymentRequest))->ApplyPaymentResult;
+    }
 
 }
