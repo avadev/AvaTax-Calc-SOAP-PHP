@@ -68,7 +68,7 @@ class GetTaxRequest
 		$this->ServiceMode=ServiceMode::$Automatic;
 		$this->ExchangeRate=1.0;	
 
-		$dateTime=new DateTime();
+		$dateTime=new \DateTime();
         $dateTime->setDate(1900,01,01);
         $this->ExchangeRateEffDate=$dateTime->format("Y-m-d");
         $this->PaymentDate=$dateTime->format("Y-m-d");

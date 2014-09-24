@@ -24,6 +24,6 @@ class Enum
 			}
 		}
 		
-		throw new Exception('Invalid '.$class.' "'.$value.'" - must be one of "'.implode('"|"',$values).'"');
+		throw new \Exception('Invalid '.$class.' "'.$value.'" - must be one of "'.implode('"|"',$values).'"');
     }
 }

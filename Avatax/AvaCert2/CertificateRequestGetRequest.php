@@ -22,7 +22,7 @@ class CertificateRequestGetRequest {
   {
   	$this->RequestStatus=CertificateRequestStatus::$ALL;
   	
-	$dateTime=new DateTime();
+	$dateTime=new \DateTime();
     $dateTime->setDate(0001,01,01);
     $this->ModFromDate=$dateTime->format("Y-m-d");
         

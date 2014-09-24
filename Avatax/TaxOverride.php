@@ -24,7 +24,7 @@ class TaxOverride
     {
     	$this->TaxAmount=0.0;
     	
-    	$dateTime=new DateTime();
+    	$dateTime=new \DateTime();
         $dateTime->setDate(1900,01,01);
         
         $this->TaxDate=$dateTime->format("Y-m-d");

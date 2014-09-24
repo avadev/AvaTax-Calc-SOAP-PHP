@@ -27,7 +27,7 @@ class Utils {
      * @return string The beautified xml
      */
     public static function xml_pretty_printer($xml, $html_output = FALSE) {
-        $xml_obj = new SimpleXMLElement($xml);
+        $xml_obj = new \SimpleXMLElement($xml);
         $xml_lines = explode("n", $xml_obj->asXML());
         $indent_level = 0;
 
@@ -59,14 +59,14 @@ class Utils {
     }
 
     public static function getDefaultDate() {
-        $dateTime = new DateTime();
+        $dateTime = new \DateTime();
         $dateTime->setDate(1900, 01, 01);
 
         return $dateTime->format("Y-m-d");
     }
 
     public static function getCurrentDate() {
-        $dateTime = new DateTime();
+        $dateTime = new \DateTime();
         return $dateTime->format("Y-m-d");
     }
 
