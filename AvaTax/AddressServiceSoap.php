@@ -27,21 +27,21 @@ class AddressServiceSoap extends AvalaraSoapClient {
 
     static private $servicePath = '/Address/AddressSvc.asmx';
     static protected $classmap = array(
-        'Validate' => 'Avatax\Validate',
-        'BaseRequest' => 'Avatax\BaseRequest',
-        'ValidateRequest' => 'Avatax\ValidateRequest',
-        'BaseAddress' => 'Avatax\BaseAddress',
-        'ValidAddress' => 'Avatax\ValidAddress',
-        'TextCase' => 'Avatax\TextCase',
-        'ValidateResult' => 'Avatax\ValidateResult',
-        'BaseResult' => 'Avatax\BaseResult',
-        'SeverityLevel' => 'Avatax\SeverityLevel',
-        'Message' => 'Avatax\Message',
-        'Profile' => 'Avatax\Profile',
-        'Ping' => 'Avatax\Ping',
-        'PingResult' => 'Avatax\PingResult',
-        'IsAuthorized' => 'Avatax\IsAuthorized',
-        'IsAuthorizedResult' => 'Avatax\IsAuthorizedResult');
+        'Validate' => 'AvaTax\Validate',
+        'BaseRequest' => 'AvaTax\BaseRequest',
+        'ValidateRequest' => 'AvaTax\ValidateRequest',
+        'BaseAddress' => 'AvaTax\BaseAddress',
+        'ValidAddress' => 'AvaTax\ValidAddress',
+        'TextCase' => 'AvaTax\TextCase',
+        'ValidateResult' => 'AvaTax\ValidateResult',
+        'BaseResult' => 'AvaTax\BaseResult',
+        'SeverityLevel' => 'AvaTax\SeverityLevel',
+        'Message' => 'AvaTax\Message',
+        'Profile' => 'AvaTax\Profile',
+        'Ping' => 'AvaTax\Ping',
+        'PingResult' => 'AvaTax\PingResult',
+        'IsAuthorized' => 'AvaTax\IsAuthorized',
+        'IsAuthorizedResult' => 'AvaTax\IsAuthorizedResult');
 
     /**
      * Construct a proxy for Avalara's Address Web Service using the default URL as coded in the class or programatically set.
