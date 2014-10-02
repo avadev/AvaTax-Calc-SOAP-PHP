@@ -43,52 +43,52 @@ Contents:
 
   <table width="1000" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td width="172"><div align="center"><strong>API</strong></div></td>
+      <td width="172"><div align="center"><strong>File</strong></div></td>
       <td width="828"><div align="center"><strong>Method Demonstrated</strong></div></td>
     </tr>
     <tr>
-      <td><strong>Credentials.php</strong></td>
+      <td><strong>Samples/Credentials.php</strong></td>
       <td>contains authentication elements (URL, Account, LicenseKey, Client) that are passed into the ATConfig object which ontains various service configuration parameters as class static variables. </td>
     </tr>
     <tr>
-      <td><strong>IsAuthorizedTest.php</strong></td>
+      <td><strong>Samples/IsAuthorizedTest.php</strong></td>
       <td> IsAuthorized is a method that allows the user to specify a number of a methods or services to ascertain  if they are permitted to use them based on the credentials  provided in the request.</td>
     </tr>
     <tr>
-      <td><strong>PingTest.php</strong></td>
+      <td><strong>Samples/PingTest.php</strong></td>
       <td> The Ping method can be used for testing connectivity to the AvaTax web service, verify  supplied credentials, and return the service version in use by the AvaTax web service. </td>
     </tr>
     <tr>
-      <td><strong>ValidateTest.php</strong></td>
+      <td><strong>Samples/ValidateTest.php</strong></td>
       <td>Validate demonstrates the <a href="http://developer.avalara.com/api-docs/avalara-avatax-api-reference#cat-Validate" target="_blank">ValidateAddress</a> method that <a href="http://developer.avalara.com/api-docs/api-reference/address-validation">normalizes a provided address</a>. US and Canada only.</td>
     </tr>
     <tr>
-      <td><strong>GetTaxRequestTest.php </strong></td>
+      <td><strong>Samples/GetTaxRequestTest.php </strong></td>
       <td>The <a href="http://developer.avalara.com/api-docs/avalara-avatax-api-reference#cat-GetTax" target="_blank">GetTaxRequest</a> method calculates retail sales tax on documents such as sales orders, sales invoices, purchase orders, purchase invoices, or credit memos.<strong> Note:</strong> A document can be committed at this stage by setting the <em>Commit</em> property to <em>true</em> (default is <em>false</em>).</td>
     </tr>
     <tr>
-      <td><strong>PostTaxTest.php</strong></td>
+      <td><strong>Samples/PostTaxTest.php</strong></td>
       <td> The <a href="http://developer.avalara.com/api-docs/avalara-avatax-api-reference#cat-PostTax">PostTax</a> method can be used to modify the state of a SalesInvoice, ReturnInvoice or PurchaseInvoice document saved to the AvaTax database. <strong>Note:</strong> A document can be committed at this stage by setting the Commit property to true (default is false).</td>
     </tr>
     <tr>
-      <td><strong>CommitTaxTest.php</strong></td>
+      <td><strong>Samples/CommitTaxTest.php</strong></td>
       <td>The CommitTax method  can be used to modify the state of a document that is &quot;<em>posted</em>&quot; (only) to the AvaTax database via SalesInvoice, ReturnInvoice or PurchaseInvoice a methods. <strong>Note:</strong> CommitTax is not a required step to commit a document to AvaTax. Documents can  be committed during the GetTax or PostTax document lifecycle. </td>
     </tr>
     <tr>
-      <td><strong>GetTaxHistoryTest.php</strong></td>
+      <td><strong>Samples/GetTaxHistoryTest.php</strong></td>
       <td><a href="http://developer.avalara.com/api-docs/avalara-avatax-api-reference#cat-GetTaxHistory" target="_blank">GetTaxHistory</a> is a method that retrieves  details from a previously saved (to the AvaTax database) documents.</td>
     </tr>
     <tr>
-      <td><strong>AdjustTaxTest.php</strong></td>
+      <td><strong>Samples/AdjustTaxTest.php</strong></td>
       <td>AdjustTax is a method that has the ability to modify elements of an <em>already committed document</em>. <strong>Note:</strong> Sets the <em>Document Modified</em> flag.</td>
     </tr>
     <tr>
-      <td><strong>CancelTaxTest.php</strong></td>
+      <td><strong>Samples/CancelTaxTest.php</strong></td>
       <td><a href="http://developer.avalara.com/api-docs/avalara-avatax-api-reference#cat-CancelTax">CancelTax</a> is a method that cancels a tax document specified by the DocId, DocCode, and DocType parameters. See&nbsp;<a href="http://developer.avalara.com/api-docs/avalara-avatax-api-reference#cat-CancelTax" target="_blank">CancelTax</a>&nbsp;for more details.</td>
     </tr>
     <tr>
-      <td><strong>/AvaTax4PHP</strong></td>
-      <td><em>../AvaTax4PHP is a Directory</em> containing the core classes that enable the API samples to make Avatax web service calls.</td>
+      <td><strong>/AvaTax</strong></td>
+      <td><em>../AvaTax is a Directory</em> containing the core classes that enable the API samples to make Avatax web service calls.</td>
     </tr>
     <tr>
       <td colspan="2"><h4><strong>Other Files Included in this Repository</strong></h4></td>
@@ -108,6 +108,10 @@ Contents:
     <tr>
       <td><strong>README.md</strong></td>
       <td>This document describing how to make use of the sample API code.</td>
+    </tr>
+    <tr>
+      <td><strong>composer.json</strong></td>
+      <td>Allows for composer management of packages.</td>
     </tr>
   </table>
 <h4><strong>Resources</strong><br />
