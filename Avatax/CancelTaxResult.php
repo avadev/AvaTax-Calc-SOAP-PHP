@@ -12,7 +12,7 @@
  * @package   Tax
  * 
  */
-namespace Avatax;
+namespace AvaTax;
 class CancelTaxResult // extends BaseResult
 {
     

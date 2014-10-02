@@ -37,7 +37,7 @@
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   Address
  */
-namespace Avatax;
+namespace AvaTax;
 class ValidAddress //extends Address - or it should - SoapClient has issues mapping attributes in superclasses
 {
 /**#@+

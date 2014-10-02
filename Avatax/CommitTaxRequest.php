@@ -18,7 +18,7 @@
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   Tax
  */
-namespace Avatax;
+namespace AvaTax;
 class CommitTaxRequest extends TaxRequest
 {
 	private $NewDocCode;  //string

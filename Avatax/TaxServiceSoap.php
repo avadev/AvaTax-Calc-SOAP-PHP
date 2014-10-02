@@ -22,7 +22,7 @@
  * @package   Tax
  */
 
-namespace Avatax;
+namespace AvaTax;
 
 class TaxServiceSoap extends AvalaraSoapClient {
 

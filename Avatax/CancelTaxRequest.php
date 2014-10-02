@@ -19,7 +19,7 @@
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   Tax
  */
-namespace Avatax;
+namespace AvaTax;
 class CancelTaxRequest extends TaxRequest
 {
     private $CancelCode;   //Unspecified or PostFailed or DocDeleted or DocVoided or AdjustmentCancelled

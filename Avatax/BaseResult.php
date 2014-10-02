@@ -11,7 +11,7 @@
  * @package   Base
  */
  
-namespace Avatax;  
+namespace AvaTax;  
 class BaseResult
 {
 

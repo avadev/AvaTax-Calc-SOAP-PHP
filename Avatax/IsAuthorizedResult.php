@@ -21,7 +21,7 @@
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   Address
  */
-namespace Avatax;
+namespace AvaTax;
 class IsAuthorizedResult //extends BaseResult
 {
     private $Operations;

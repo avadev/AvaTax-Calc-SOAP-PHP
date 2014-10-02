@@ -12,7 +12,7 @@
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   Base
  */
-namespace Avatax;
+namespace AvaTax;
 class ATConfig
 {
     private static $Configurations = array();

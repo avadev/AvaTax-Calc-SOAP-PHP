@@ -29,7 +29,7 @@
  * @package   Address
  */
 
-namespace Avatax;
+namespace AvaTax;
 class ValidateResult// extends BaseResult
 {
 /**

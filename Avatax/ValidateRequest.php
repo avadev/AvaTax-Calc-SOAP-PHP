@@ -39,7 +39,7 @@
        // return $this->client->Validate(array('ValidateRequest' => $request))->ValidateResult;
     //}
 
-namespace Avatax;
+namespace AvaTax;
 class ValidateRequest
 {
     private $Address;

@@ -11,7 +11,7 @@
  * @author    Avalara
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  */
-namespace Avatax;
+namespace AvaTax;
 class Message
 {
     private $Summary;

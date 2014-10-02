@@ -11,7 +11,7 @@
  * @package   Address
  * 
  */
-namespace Avatax;
+namespace AvaTax;
 class AddressType extends Enum
 {
 	public static $FirmOrCompany 	= 'F';

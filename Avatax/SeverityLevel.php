@@ -12,7 +12,7 @@
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   Address
  */
-namespace Avatax;
+namespace AvaTax;
 class SeverityLevel extends Enum
 {
     public static $Success = 'Success';

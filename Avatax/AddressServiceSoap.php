@@ -21,7 +21,7 @@
  * 
  */
 
-namespace Avatax;
+namespace AvaTax;
 
 class AddressServiceSoap extends AvalaraSoapClient {
 
