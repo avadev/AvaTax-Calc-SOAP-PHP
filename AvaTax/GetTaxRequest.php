@@ -55,21 +55,15 @@ class GetTaxRequest
 	public function __construct()
 	{
 	
-		$this->DocDate = date("Y-m-d");
 		$this->Commit=false;
 		$this->HashCode=0;
 		$this->Discount=0.0;
 		$this->DocType=DocumentType::$SalesInvoice;
 		$this->DetailLevel=DetailLevel::$Document;
-		$this->DocCode = date("Y-m-d-H-i-s.u");
-		$this->CustomerCode='CustomerCodeString';
-		$this->Lines=array(new Line());
-				
+		$this->Lines=array(new Line());				
 		$this->ServiceMode=ServiceMode::$Automatic;
 		$this->ExchangeRate=1.0;	
-
-		$dateTime=new \DateTime();
-        $dateTime->setDate(1900,01,01);
+		$dateTime=new \DateTime("1900-01-01", new \DateTimeZone('UTC'));
         $this->ExchangeRateEffDate=$dateTime->format("Y-m-d");
         $this->PaymentDate=$dateTime->format("Y-m-d");
 				
