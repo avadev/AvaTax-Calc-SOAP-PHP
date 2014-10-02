@@ -4,10 +4,11 @@ require('vendor/autoload.php');
 //TODO: Modify the account and license key values
 //      contained set in Credentials.php with your own
 require('Credentials.php');
-use Avatax\Address;
-use Avatax\AddressServiceSoap;
-use Avatax\TextCase;
-use Avatax\ValidateRequest;
+use AvaTax\Address;
+use AvaTax\AddressServiceSoap;
+use AvaTax\TextCase;
+use AvaTax\ValidateRequest;
+use AvaTax\SeverityLevel;
 
 $addressSvc = new AddressServiceSoap('Development');
 try

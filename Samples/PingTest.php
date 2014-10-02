@@ -4,8 +4,8 @@ require('vendor/autoload.php');
 //TODO: Modify the account and license key values
 //      contained set in Credentials.php with your own
 require('Credentials.php');
-use Avatax\SeverityLevel;
-use Avatax\TaxServiceSoap;
+use AvaTax\SeverityLevel;
+use AvaTax\TaxServiceSoap;
 
 $taxSvc = new TaxServiceSoap('Development');
 

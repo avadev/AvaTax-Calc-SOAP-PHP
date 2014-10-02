@@ -1,4 +1,6 @@
 <?php
+require('vendor/autoload.php');
+use AvaTax\ATConfig;
 /* Authentication Credentials
  * 
  * Development Account

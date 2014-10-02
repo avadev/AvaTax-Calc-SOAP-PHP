@@ -4,15 +4,15 @@ require 'vendor/autoload.php';
 //TODO: Modify the account and license key values
 //      contained set in Credentials.php with your own
 require('Credentials.php');
-use Avatax\Address;
-use Avatax\AdjustTaxRequest;
-use Avatax\DetailLevel;
-use Avatax\GetTaxRequest;
-use Avatax\Line;
-use Avatax\SeverityLevel;
+use AvaTax\Address;
+use AvaTax\AdjustTaxRequest;
+use AvaTax\DetailLevel;
+use AvaTax\GetTaxRequest;
+use AvaTax\Line;
+use AvaTax\SeverityLevel;
 //use Avatax\TaxOverride;
 //use Avatax\TaxOverrideType;
-use Avatax\TaxServiceSoap;
+use AvaTax\TaxServiceSoap;
 
 $taxSvc = new TaxServiceSoap('Development');
 //GetTaxRequest to be modified (duplicate of an original)

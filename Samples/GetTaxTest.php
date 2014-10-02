@@ -5,14 +5,14 @@ require('vendor/autoload.php');
 //      contained set in Credentials.php with your own
 require('Credentials.php');
 
-use Avatax\Address;
-use Avatax\DetailLevel;
-use Avatax\GetTaxRequest;
-use Avatax\Line;
-use Avatax\SeverityLevel;
-//use Avatax\TaxOverride;
-//use Avatax\TaxOverrideType;
-use Avatax\TaxServiceSoap;
+use AvaTax\Address;
+use AvaTax\DetailLevel;
+use AvaTax\GetTaxRequest;
+use AvaTax\Line;
+use AvaTax\SeverityLevel;
+//use AvaTax\TaxOverride;
+//use AvaTax\TaxOverrideType;
+use AvaTax\TaxServiceSoap;
 
 $taxSvc = new TaxServiceSoap('Development');
 $getTaxRequest = new GetTaxRequest();
