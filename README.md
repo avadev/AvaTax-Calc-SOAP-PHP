@@ -26,7 +26,7 @@ Note: For *nix, it may be necessary to recompile your PHP interpreter with soap.
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/avadev/AvaTax-Calc-REST-PHP"
+            "url": "https://github.com/avadev/AvaTax-Calc-SOAP-PHP"
         }
     ],
     "require": {
