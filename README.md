@@ -1,18 +1,46 @@
+AvaTax-REST-PHP
+=====================
 [Other Samples](http://developer.avalara.com/api-docs/api-sample-code)
 
-<p>The <strong>AvaTaxCalc PHP (for SOAP) Sample</strong> is open source designed to assist you with developing your own <em>custom</em> integration to your chosen web store or e-commerce solution. To run selected samples you will need to modify the Credentials.php class included with this sample with your own account and license key.</p>
-  <em><strong>Note: </strong></em>The Avalara Admin Account <em>Username</em> and <em>Password</em> can be used in place of <em>Account</em> and <em>License Key</em>
- <p>See http://developer.avalara.com/api-docs/designing-your-integration for more information.
-  </p>
-  <h4><strong>Installation Dependencies</strong></h4>
-  <li>PHP V5.3 or later</li>
-  <li><em>SSL</em> and <em>SoapClient</em> support must be enabled for your PHP interpreter. For windows, add the following extentions to php.ini: <br />
-    <br />
-    <span class="cmeta"><code>extension=php_soap.dll</code><br />
-    <code>extension=php_openssl.dll</code></span></code> <br />
-    <br />
-    <em><strong>Note: </strong></em>For <em>*nix</em>, it may be necessary to recompile your PHP interpreter with <em>soap.dll</em> and <em>oenssl.dll</em> enabled. </li>
-  <h4><strong>Samples Included</strong></h4>
+This is a PHP sample demonstrating the [AvaTax SOAP API](http://developer.avalara.com/api-docs/soap). 
+ For more information on the use of these methods and the AvaTax product, please visit our [developer site](http://developer.avalara.com/) or [homepage](http://www.avalara.com/)
+
+Dependencies:
+-----------
+- PHP 5.3 or later (not tested on versions older than PHP 5.3)
+
+Requirements:
+----------
+- Authentication requires an valid **Account Number** and **License Key**, which should be entered in the test file (e.g. GetTaxTest.php) you would like to run.
+- If you do not have an AvaTax account, a free trial account can be acquired through our [developer site](http://developer.avalara.com/api-get-started)
+- **SSL** and **SoapClient** support must be enabled for your PHP interpreter. For windows, add the following extentions to php.ini:
+```
+extension=php_soap.dll
+extension=php_openssl.dll
+```
+Note: For *nix, it may be necessary to recompile your PHP interpreter with soap.dll and openssl.dll enabled.
+
+
+- If you would like to use these core classes as part of a project and manage your depencies through [composer](https://getcomposer.org/), the Avatax classes can be added to your existing project by adding
+```
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/avadev/AvaTax-Calc-REST-PHP"
+        }
+    ],
+    "require": {
+        "avalara/avatax": "*"
+    }
+```
+to your composer.json file and run `php composer.phar update` from your command line.
+
+
+
+
+Contents:
+------------
+
   <table width="1000" border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td width="172"><div align="center"><strong>API</strong></div></td>
