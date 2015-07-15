@@ -1,4 +1,4 @@
-AvaTax-REST-PHP
+AvaTax-Calc-SOAP-PHP
 =====================
 [Other Samples](http://developer.avalara.com/api-docs/api-sample-code)
 

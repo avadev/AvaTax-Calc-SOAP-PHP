@@ -10,8 +10,8 @@ use AvaTax\DetailLevel;
 use AvaTax\GetTaxRequest;
 use AvaTax\Line;
 use AvaTax\SeverityLevel;
-//use Avatax\TaxOverride;
-//use Avatax\TaxOverrideType;
+//use AvaTax\TaxOverride;
+//use AvaTax\TaxOverrideType;
 use AvaTax\TaxServiceSoap;
 
 $taxSvc = new TaxServiceSoap('Development');

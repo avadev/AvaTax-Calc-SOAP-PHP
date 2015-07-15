@@ -10,11 +10,11 @@
  * @package   AvaCert2
  */
 
-namespace Avatax\AvaCert2;
+namespace AvaTax\AvaCert2;
 
-use Avatax\AvalaraSoapClient;
-use Avatax\ATConfig;
-use Avatax\DynamicSoapClient;
+use AvaTax\AvalaraSoapClient;
+use AvaTax\ATConfig;
+use AvaTax\DynamicSoapClient;
 
 class AvaCert2Soap extends AvalaraSoapClient {
 
