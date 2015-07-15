@@ -10,7 +10,7 @@
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   Batch
  */
-namespace Avatax\Batch;
+namespace AvaTax\Batch;
 class BatchFileFetchResult extends BaseResult {
   private $BatchFiles; // ArrayOfBatchFile
   private $RecordCount; // int

@@ -10,8 +10,8 @@
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   AvaCert2
  */
-namespace Avatax\AvaCert2;
-use Avatax\BaseResult;
+namespace AvaTax\AvaCert2;
+use AvaTax\BaseResult;
 class CustomerSaveResult extends BaseResult {
 
 }

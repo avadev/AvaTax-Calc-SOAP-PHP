@@ -11,8 +11,8 @@
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   AvaCert2
 */
-namespace Avatax\AvaCert2;
-use Avatax\Enum;
+namespace AvaTax\AvaCert2;
+use AvaTax\Enum;
 class ReviewStatus extends Enum
 {	    
      /**

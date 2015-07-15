@@ -10,7 +10,7 @@
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   AvaCert2
  */
-namespace Avatax\AvaCert2;
+namespace AvaTax\AvaCert2;
 class CertificateGetRequest {
   private $CompanyCode; // string
   private $CustomerCode; // string

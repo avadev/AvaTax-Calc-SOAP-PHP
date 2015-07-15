@@ -10,8 +10,8 @@
  * @copyright © 2004 - 2011 Avalara, Inc.  All rights reserved.
  * @package   Batch
  */
-namespace Avatax\Batch;
-use Avatax\Utils;
+namespace AvaTax\Batch;
+use AvaTax\Utils;
 class Batch {
   private $AccountId; // int
   private $BatchId; // int
