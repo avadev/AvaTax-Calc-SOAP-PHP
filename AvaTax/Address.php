@@ -216,7 +216,7 @@ class Address
      *
      * @return string $value
      */
-    public function getCountry() { return $this->AddressCode; }
+    public function getCountry() { return $this->Country; }
     
     /**
      * TaxRegionId provides the ability to override the tax region assignment for an address. 
