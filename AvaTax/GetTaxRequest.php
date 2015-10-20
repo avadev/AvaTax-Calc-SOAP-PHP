@@ -15,9 +15,9 @@
 namespace AvaTax;
 class GetTaxRequest 
 {
-	private $CompanyCode; // string
-	private $DocCode;
-	private $DocType;
+    private $CompanyCode; // string
+    private $DocCode;
+    private $DocType;
     private $DocDate;				//date
     private $SalespersonCode;		//string
     private $CustomerCode;			//string
@@ -34,24 +34,22 @@ class GetTaxRequest
     private $LocationCode;			//string
     private $Commit=false;			//boolean
     private $BatchCode;				//string
-	private $OriginAddress;			//address
-	private $DestinationAddress;		//address
+    private $OriginAddress;			//address
+    private $DestinationAddress;		//address
     
     
     //@author: Swetal
     //Added new properties to upgrade to 5.3 interface    
     private $TaxOverride;		//TaxOverride
-	private $CurrencyCode;		//string
+    private $CurrencyCode;		//string
     private $ServiceMode;		//type: ServiceMode
     private $PaymentDate;		//date
     private $ExchangeRate;		//decimal
     private $BusinessIdentificationNo;     //string
     private $ExchangeRateEffDate;	//date
-	private $PosLaneCode;		//string
+    private $PosLaneCode;		//string
     
     
-    
-
 	public function __construct()
 	{
 	
@@ -66,8 +64,6 @@ class GetTaxRequest
 		$dateTime=new \DateTime("1900-01-01", new \DateTimeZone('UTC'));
         $this->ExchangeRateEffDate=$dateTime->format("Y-m-d");
         $this->PaymentDate=$dateTime->format("Y-m-d");
-				
-		
 	}
 
 	public function prepare()
@@ -295,7 +291,7 @@ class GetTaxRequest
     /**
 	 * The discount amount to apply to the document. 
 	 *
-	 * @param decimal $value
+	 * @param float $value
 	 
 	 */
 	public function setDiscount($value) { $this->Discount = $value; return $this; }				//decimal
@@ -350,7 +346,7 @@ class GetTaxRequest
 	 * ExchangeRate indicates the currency exchange rate from the transaction currency (indicated by CurrencyCode) to the company base currency.
 	 * This only needs to be set if the transaction currency is different than the company base currency. It defaults to 1.0. 
 	 *
-	 * @param decimal $value
+	 * @param float $value
 	 
 	 */
 	public function setExchangeRate($value) { $this->ExchangeRate = $value; return $this; }				//decimal
