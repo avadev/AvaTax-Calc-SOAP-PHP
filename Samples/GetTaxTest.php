@@ -158,7 +158,7 @@ try {
   if ($getTaxResult->getResultCode() == SeverityLevel::$Success) {
 //Success - Display GetTaxResults to console
 //Document Level Results
-    echo "DocCode: " . $getTaxRequest->getDocCode() . "\n";
+    echo "DocCode: " . $getTaxResult->getDocCode() . "\n";
     echo "TotalAmount: " . $getTaxResult->getTotalAmount() . "\n";
     echo "TotalTax: " . $getTaxResult->getTotalTax() . "\n";
 //Line Level Results (from TaxLines array class)

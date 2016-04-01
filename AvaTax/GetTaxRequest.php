@@ -118,64 +118,6 @@ class GetTaxRequest
 		
 		return $this;		
 	}
-	
-	
-	/**
-	 * Enter description here...
-	 *
-	 * @param string $value	 
-	 */
-    public function setAddressCode($value) { $this->AddressCode = $value; return $this; }
-    
-    /**
-	 * Enter description here...
-	 *
-	 * @param string $value	 
-	 */
-    public function setLine1($value) { $this->Line1 = $value; return $this; }
-    
-    /**
-	 * Enter description here...
-	 *
-	 * @param string $value	 
-	 */
-    public function setLine2($value) { $this->Line2 = $value; return $this; }
-    
-    /**
-	 * Enter description here...
-	 *
-	 * @param string $value	 
-	 */
-    public function setLine3($value) { $this->Line3 = $value; return $this; }
-    
-    /**
-	 * Enter description here...
-	 *
-	 * @param string $value	 
-	 */
-    public function setCity($value) { $this->City = $value; return $this; }
-    
-    /**
-	 * Enter description here...
-	 *
-	 * @param string $value	 
-	 */
-    public function setRegion($value) { $this->Region = $value; return $this; }
-    
-    /**
-	 * Enter description here...
-	 *
-	 * @param string $value	 
-	 */
-    public function setPostalCode($value) { $this->PostalCode = $value; return $this; }
-    
-    /**
-	 * Enter description here...
-	 *
-	 * @param string $value	 
-	 */
-    public function setCountry($value) { $this->Country = $value; return $this; }
-
 /**
  * Mutator
  * @access public
