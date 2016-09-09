@@ -58,16 +58,17 @@ class TaxServiceSoap extends AvalaraSoapClient {
         'TaxOverride' => 'AvaTax\TaxOverride'
     );
 
-    public function __construct($configurationName = 'Default') {
+    public function __construct($configurationName = 'Default', $options = array()) {
         $config = new ATConfig($configurationName);
 
         $this->client = new DynamicSoapClient(
-                $config->taxWSDL, array
-            (
-            'location' => $config->url . $config->taxService,
-            'trace' => $config->trace,
-            'classmap' => TaxServiceSoap::$classmap
-                ), $config
+            $config->taxWSDL,
+            array_merge($options, array(
+                'location' => $config->url . $config->taxService,
+                'trace' => $config->trace,
+                'classmap' => TaxServiceSoap::$classmap
+            )),
+            $config
         );
     }
 
