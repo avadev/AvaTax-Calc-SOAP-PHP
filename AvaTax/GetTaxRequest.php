@@ -36,6 +36,7 @@ class GetTaxRequest
     private $BatchCode;				//string
     private $OriginAddress;			//address
     private $DestinationAddress;		//address
+    private $IsSellerImporterOfRecord=false;      //boolean
     
     
     //@author: Swetal
@@ -364,6 +365,14 @@ class GetTaxRequest
 		$this->ReferenceCode=$value;
 	}
 
+    /**
+     * Set the value for IsSellerImporterOfRecord
+     *
+     * @param boolean $value
+     * @return $this
+     */
+    public function setIsSellerImporterOfRecord($value) { $this->IsSellerImporterOfRecord = $value; return $this; }
+
 /**#@+
  * Accessor
  * @access public
@@ -427,6 +436,8 @@ class GetTaxRequest
     public function getBusinessIdentificationNo() {return $this->BusinessIdentificationNo; }   //string
 	public function getPosLaneCode() {return $this->PosLaneCode; }   //string
 	public function getTaxOverride(){ return $this->TaxOverride;}
+
+    public function getIsSellerImporterOfRecord() { return $this->IsSellerImporterOfRecord;}
 	
 	public function getReferenceCode()
 	{
