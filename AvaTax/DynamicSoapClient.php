@@ -23,6 +23,13 @@ class DynamicSoapClient extends \SoapClient
     private $config;
     public function __construct($wsdl,$options,&$config)
     {
+        /**
+         * Ensure we get back an array any time there is a XML sequence
+         *
+         * @see https://bugs.php.net/bug.php?id=36226
+         */
+        $options['features'] = ((isset($options['features']) ? $options['features'] : 0) | SOAP_SINGLE_ELEMENT_ARRAYS);
+        
         parent::__construct($wsdl,$options);
         $this->config = $config; 
     }
