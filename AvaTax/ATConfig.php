@@ -29,7 +29,6 @@ class ATConfig
     
     public function __get($n) 
     {
-        if($n == '_ivars') { return parent::__get($n); }
         if(isset($this->_ivars[$n])) 
         {
             return $this->_ivars[$n]; 
